@@ -1,0 +1,7 @@
+{
+  "name": "studyroom",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

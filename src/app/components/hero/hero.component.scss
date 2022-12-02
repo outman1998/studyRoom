@@ -1,0 +1,43 @@
+.container {
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.642), rgb(0, 0, 0)), url(../../../assets/images/ffff.jpeg);
+  background-size: cover;
+  color: white;
+  background-position: center;
+}
+
+
+.txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.txt h1 {
+  font-size: 55px;
+
+}
+
+.txt p {
+  font-size: 28px;
+  font-weight: lighter;
+  margin-top: 0px;
+}
+
+
+.txt .btn {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  width: fit-content;
+  margin: auto;
+  font-size: 18px;
+  border: 1px solid white;
+}
+
