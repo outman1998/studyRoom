@@ -8,10 +8,18 @@
 
 .container ul {
   list-style: none;
+  padding: 0px;
 }
 
 .container ul li {
   margin: 10px 0px;
+  padding: 5px;
+}
+
+.container ul li:hover {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .ikon {
