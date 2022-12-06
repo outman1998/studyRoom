@@ -1,33 +1,58 @@
-# Specifies intentionally untracked files to ignore when using Git
-# http://git-scm.com/docs/gitignore
+# # Specifies intentionally untracked files to ignore when using Git
+# # http://git-scm.com/docs/gitignore
 
-*~
-*.sw[mnpcod]
-.tmp
-*.tmp
-*.tmp.*
-*.sublime-project
-*.sublime-workspace
-.DS_Store
-Thumbs.db
-UserInterfaceState.xcuserstate
-$RECYCLE.BIN/
+# *~
+# *.sw[mnpcod]
+# .tmp
+# *.tmp
+# *.tmp.*
+# *.sublime-project
+# *.sublime-workspace
+# .DS_Store
+# Thumbs.db
+# UserInterfaceState.xcuserstate
+# $RECYCLE.BIN/
 
-*.log
-log.txt
-npm-debug.log*
+# *.log
+# log.txt
+# npm-debug.log*
 
-/.angular
-/.idea
-/.ionic
-/.sass-cache
-/.sourcemaps
-/.versions
-/.vscode/*
-!/.vscode/extensions.json
-/coverage
-/dist
-/node_modules
-/platforms
-/plugins
-/www
+# /frontend/.angular
+# /frontend/.idea
+# /frontend/.ionic
+# /frontend/.sass-cache
+# /frontend/.sourcemaps
+# /frontend/.versions
+# /frontend/.vscode/*
+# !/.vscode/extensions.json
+# /frontend/coverage
+# /frontend/dist
+# /frontend/node_modules
+# /frontend/platforms
+# /frontend/plugins
+# /frontend/www
+# /backend/node_modules
+# /frontend/.angular/cache/15.0.
+
+# node_modules
+# *.pack
+# .angular/cache/15.0.1/babel-webpack/07f99f7f53bc995a555a1687ba119fff8e309b696d9415579b0f14577bcb8e79.json
+
+# .angular/cache/15.0.1/babel-webpack/
+# .angular/cache/15.0.1/
+
+# node_modules/.bin/autoprefixer
+# node_modules/.bin
+
+# node_modules/.bin/uuid
+# node_modules/.bin/webpack-dev-server
+# *.map
+# /.angular
+# /backend/node_modules
+
+
+**angular
+
+**backend/node_modules
+
+**frontend/node_modules
