@@ -1,7 +1,6 @@
 .container {
-  display: flex;
   justify-content: space-evenly;
-  padding: 70px 0px;
+  padding: 70px 20px;
   background-color: #E9F9EE;
   color: #2f2e41;
 }
@@ -52,4 +51,26 @@
   border-radius: 5px;
   padding: 7px;
   border: none;
+}
+
+.footer {
+  border-bottom: 1px solid #0000001a;
+}
+
+.footer:last-child {
+  border-bottom: none;
+}
+
+.logo {
+  border-bottom: 1px solid #0000001a;
+  padding-bottom: 15px;
+}
+
+
+@media only screen and (min-width: 800px) {
+
+  .container {
+    display: flex;
+  }
+
 }
