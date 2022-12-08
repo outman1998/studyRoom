@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ForloebComponent } from './components/forloeb/forloeb.component';
-
 import {HttpClientModule} from '@angular/common/http';
 import { ApiserviceService } from './services/apiservice.service';
+
+import { AuthModule } from '@auth0/auth0-angular';
 
 @NgModule({
   declarations: [AppComponent, ForloebComponent],
@@ -18,7 +19,11 @@ import { ApiserviceService } from './services/apiservice.service';
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthModule.forRoot({
+    domain: 'dev-l5ni5uzfmntgm850.us.auth0.com',
+    clientId: 'RpKts7o2RhyYXRUE3f8Xhxv9ialCMhSi'
+  })
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
