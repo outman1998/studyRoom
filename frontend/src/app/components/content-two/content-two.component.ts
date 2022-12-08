@@ -17,6 +17,7 @@ export class ContentTwoComponent implements OnInit {
     loop: true,
     spaceBetween: 10,
     // autoplay: true,
+    // speed: 600
 
   }
 
