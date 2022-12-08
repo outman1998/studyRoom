@@ -37,7 +37,6 @@
 /////
 
 .sectionTwo {
-  padding: 100px 0px;
   display: grid;
 }
 
@@ -95,7 +94,6 @@
 
 
   .sectionTwo {
-    margin-top: 100px;
     display: flex;
   }
 
@@ -129,6 +127,10 @@
   .containerr .sectionOne  .venstre {
     margin-right: 50px !important;
   }
+
+  .sectionTwo {
+    margin-top: 50px;
+}
 
   
 }

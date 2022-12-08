@@ -9,10 +9,21 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ForloebComponent } from './components/forloeb/forloeb.component';
 
+import {HttpClientModule} from '@angular/common/http';
+import { ApiserviceService } from './services/apiservice.service';
+
 @NgModule({
   declarations: [AppComponent, ForloebComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
+    ApiserviceService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
