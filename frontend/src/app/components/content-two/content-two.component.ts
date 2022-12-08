@@ -11,4 +11,14 @@ export class ContentTwoComponent implements OnInit {
 
   ngOnInit() {}
 
+  option = { 
+    slidesPerView: 3,
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 10,
+    // autoplay: true,
+    // speed: 600
+
+  }
+
 }
