@@ -8,7 +8,6 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HeroComponent } from '../components/hero/hero.component';
 
 import { NavComponent } from '../components/nav/nav.component';
-import { LoginBtnComponent } from '../login-btn/login-btn.component';
 import { ContentOneComponent } from '../components/content-one/content-one.component';
 import { ContentTwoComponent } from '../components/content-two/content-two.component';
 import { FooterComponent } from '../components/footer/footer.component';
@@ -28,7 +27,6 @@ import { FooterComponent } from '../components/footer/footer.component';
     ContentOneComponent,
     ContentTwoComponent,
     FooterComponent,
-    LoginBtnComponent
   ]
 })
 export class HomePageModule {}
