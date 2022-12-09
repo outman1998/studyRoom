@@ -1,3 +1,25 @@
-<p>
-  read works!
-</p>
+<div class="container">
+
+
+<table class="table">
+  <thead class="head">
+    <tr>
+      <th class="row">ID</th>
+      <th class="row">fullname</th>
+      <th class="row">email</th>
+      <th class="row">mobil</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr *ngFor="let us of readData">
+      <th class="vaerdi row">{{us.id}}</th>
+      <td class="vaerdi">{{us.fullname}}</td>
+      <td class="vaerdi">{{us.email}}</td>
+      <td class="vaerdi">{{us.mobil}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>

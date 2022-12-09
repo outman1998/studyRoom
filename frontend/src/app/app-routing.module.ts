@@ -4,6 +4,7 @@ import { ForloebComponent } from './components/forloeb/forloeb.component';
 import { ReadComponent } from './components/read/read.component';
 import { CreateComponent } from './components/create/create.component'
 
+
 const routes: Routes = [
   {
     path: 'home',
@@ -34,6 +35,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    
   ],
   exports: [RouterModule]
 })

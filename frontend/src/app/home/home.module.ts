@@ -11,6 +11,7 @@ import { NavComponent } from '../components/nav/nav.component';
 import { ContentOneComponent } from '../components/content-one/content-one.component';
 import { ContentTwoComponent } from '../components/content-two/content-two.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { ReadComponent } from '../components/read/read.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { FooterComponent } from '../components/footer/footer.component';
     ContentOneComponent,
     ContentTwoComponent,
     FooterComponent,
+    ReadComponent
   ]
 })
 export class HomePageModule {}
