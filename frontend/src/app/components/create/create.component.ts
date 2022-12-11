@@ -22,14 +22,19 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
 
-    this.service.getSingleData(this.getParamId).subscribe((res)=> {
-      console.log(res, 'res==>');
-      this.userForm.patchValue({
-        'fullname': res.data[0].fullname,
-        'email': res.data[0].email,
-        'mobil': res.data[0].mobil
-      })
-    })
+    if(this.getParamId) 
+    {
+      this.service.getSingleData(this.getParamId).subscribe((res)=> {
+        console.log(res, 'res==>');
+        this.userForm.patchValue({
+          'fullname': res.data[0].fullname,
+          'email': res.data[0].email,
+          'mobil': res.data[0].mobil
+        })
+      });
+    }
+
+
   }
 
   userForm = new FormGroup({
@@ -67,11 +72,11 @@ export class CreateComponent implements OnInit {
       this.service.updateData(this.userForm.value, this.getParamId).subscribe((res)=> {
         console.log(res, 'res Updated');
         this.succesMsg = res.message;
-        this.userForm.reset();
+        // this.userForm.reset();
 
       });
     } else {
-      this.errorMsg = 'all field is required!';
+      this.errorMsg = 'all field is required! User not added';
     }
 
 

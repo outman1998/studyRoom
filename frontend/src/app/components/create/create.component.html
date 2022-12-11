@@ -1,14 +1,22 @@
 <div class="container">
 
 
-  <p> create a user: </p>
+  <p *ngIf="!getParamId"> Opret et kursus ved at udfylde alle kolonner for neden: </p>
+  <div *ngIf="getParamId"> 
+    <p>Du er nu i gang med at opdatere kursus nr. {{getParamId}}</p> 
+    <button class="opdaterbtn"> <a routerLink="/read">Til kursusoversigt</a> </button>
+  </div>
 
   <div *ngIf="errorMsg" class="err">
-    <p>User not added...</p>
+    <p> {{errorMsg}}</p>
   </div>
 
   <div *ngIf="succesMsg" class="succesMsg">
-    <p>Succesfully added user!</p>
+    <p>{{succesMsg}}</p>
+  </div>
+
+  <div *ngIf="succesMsg && getParamId" class="succesMsg">
+    <p>Succesfully updated the user!</p>
   </div>
 
 <form [formGroup]="userForm" >
@@ -25,8 +33,8 @@
     <input type="tel" placeholder="Enter mobil" formControlName="mobil">
   </div>
 
-  <button class="btn" *ngIf="!getParamId" (click)="userSubmit()">Opret user</button>
-  <button class="btn" *ngIf="getParamId" (click)="userUpdate()">Opdater user</button>
+  <button class="btn" *ngIf="!getParamId" (click)="userSubmit()">Opret kursus</button>
+  <button class="btn" *ngIf="getParamId" (click)="userUpdate()">Opdater kursus</button>
 
 </form>
 
