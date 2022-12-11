@@ -1,0 +1,34 @@
+.container {
+    margin: 0px auto;
+}
+
+.container .input input {
+    width: 300px;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.container .btn {
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+
+.err {
+    background-color: #ff0000a6;
+    color: white;
+    font-size: 20px;
+    border-radius: 3px;
+    height: 40px;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.succesMsg {
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    border-radius: 3px;
+    height: 40px;
+    font-weight: bold;
+    line-height: 40px;
+}

@@ -1,3 +1,37 @@
-<p>
-  create works!
-</p>
+<div class="container">
+
+
+  <p> create a user: </p>
+
+  <div *ngIf="errorMsg" class="err">
+    <p>User not added...</p>
+  </div>
+
+  <div *ngIf="succesMsg" class="succesMsg">
+    <p>Succesfully added user!</p>
+  </div>
+
+<form [formGroup]="userForm" >
+
+  <div class="input">
+    <input type="text" placeholder="Enter fullname" formControlName="fullname">
+  </div>
+
+  <div class="input">
+    <input type="email" placeholder="Enter email" formControlName="email">
+  </div>
+
+  <div class="input">
+    <input type="tel" placeholder="Enter mobil" formControlName="mobil">
+  </div>
+
+  <button class="btn" *ngIf="!getParamId" (click)="userSubmit()">Opret user</button>
+  <button class="btn" *ngIf="getParamId" (click)="userUpdate()">Opdater user</button>
+
+</form>
+
+
+</div>
+
+
+
