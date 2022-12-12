@@ -13,13 +13,21 @@ import { ContentTwoComponent } from '../components/content-two/content-two.compo
 import { FooterComponent } from '../components/footer/footer.component';
 import { ReadComponent } from '../components/read/read.component';
 
+import { CreateComponent } from '../components/create/create.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   declarations: [
     HomePage,
@@ -28,7 +36,8 @@ import { ReadComponent } from '../components/read/read.component';
     ContentOneComponent,
     ContentTwoComponent,
     FooterComponent,
-    ReadComponent
+    ReadComponent,
+    CreateComponent
   ]
 })
 export class HomePageModule {}

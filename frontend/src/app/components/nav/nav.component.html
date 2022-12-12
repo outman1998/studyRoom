@@ -14,8 +14,15 @@
   </div>
 
   <div class="btns">
+    <ng-template #loggedOut>
     <button class="btn btn1" (click)="auth.loginWithRedirect()">Log ind</button>
     <button class="btn btn2">Opret</button>
+    </ng-template>
+    <div *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+      <button class="btn btn1" (click)="auth.logout()">
+        Log out
+      </button>
+    </div>
   </div>
 
 </div>

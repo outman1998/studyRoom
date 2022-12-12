@@ -1,3 +1,45 @@
-<p>
-  create works!
-</p>
+<div class="container">
+
+
+  <p *ngIf="!getParamId"> Opret et kursus ved at udfylde alle kolonner for neden: </p>
+  <div *ngIf="getParamId"> 
+    <p>Du er nu i gang med at opdatere kursus nr. {{getParamId}}</p> 
+    <button class="opdaterbtn"> <a routerLink="/read">Til kursusoversigt</a> </button>
+  </div>
+
+  <div *ngIf="errorMsg" class="err">
+    <p> {{errorMsg}}</p>
+  </div>
+
+  <div *ngIf="succesMsg" class="succesMsg">
+    <p>{{succesMsg}}</p>
+  </div>
+
+  <div *ngIf="succesMsg && getParamId" class="succesMsg">
+    <p>Succesfully updated the user!</p>
+  </div>
+
+<form [formGroup]="userForm" >
+
+  <div class="input">
+    <input type="text" placeholder="Enter fullname" formControlName="fullname">
+  </div>
+
+  <div class="input">
+    <input type="email" placeholder="Enter email" formControlName="email">
+  </div>
+
+  <div class="input">
+    <input type="tel" placeholder="Enter mobil" formControlName="mobil">
+  </div>
+
+  <button class="btn" *ngIf="!getParamId" (click)="userSubmit()">Opret kursus</button>
+  <button class="btn" *ngIf="getParamId" (click)="userUpdate()">Opdater kursus</button>
+
+</form>
+
+
+</div>
+
+
+

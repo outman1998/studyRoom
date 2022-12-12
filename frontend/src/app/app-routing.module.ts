@@ -16,11 +16,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'forloeb',
-    component: ForloebComponent,
-    pathMatch: 'full'
-  },
-  {
     path: 'read',
     component: ReadComponent,
     pathMatch: 'full'
@@ -28,8 +23,13 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreateComponent,
+  },
+  {
+    path: 'create/:id',
+    component: CreateComponent,
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'about-us',
     loadChildren: () => import('./about-us/about-us.module').then( m => m.AboutUsPageModule)
   }

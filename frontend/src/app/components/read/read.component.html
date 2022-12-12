@@ -1,5 +1,8 @@
 <div class="container">
 
+  <div *ngIf="deletedSuccesMsg" class="err">
+    <p>User deleted.</p>
+  </div>
 
 <table class="table">
   <thead class="head">
@@ -8,6 +11,7 @@
       <th class="row">fullname</th>
       <th class="row">email</th>
       <th class="row">mobil</th>
+      <th class="row">edit</th>
     </tr>
   </thead>
   
@@ -17,6 +21,13 @@
       <td class="vaerdi">{{us.fullname}}</td>
       <td class="vaerdi">{{us.email}}</td>
       <td class="vaerdi">{{us.mobil}}</td>
+      <td class="vaerdi">
+        <button class="deltebtn" (click)="deleteID(us.id)">Delete</button>
+        <button class="updateBtn">
+          <a [routerLink]="['/create', us.id]">Update</a> 
+        </button>
+      </td>
+  
     </tr>
   </tbody>
 </table>
