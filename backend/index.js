@@ -18,7 +18,7 @@ const db = mysql.createConnection({
     user:'root',
     password:'root',
     database:'simpledb',
-    port:3006,
+    port:8889,
     socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
 })
 
