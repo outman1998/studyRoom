@@ -127,7 +127,8 @@ app.put('/kursus/:id', (req, res) => {
 
     console.log(req.body, 'updated data');
 
-    let gID = req.params.id;
+    let getId = req.params.id;
+
 
     // sætter variabler til og være lig med vores tables værdier.
     // let fullName = req.body.fullname;
@@ -140,7 +141,7 @@ app.put('/kursus/:id', (req, res) => {
     let img = req.body.img;
     let content = req.body.content;
 
-    let qr = `update kursus set overskrift = "${overskrift}", beskrivelse = "${beskrivelse}", fag = "${fag}", img = "${img}", content = "${content}" where id = ${gID}`;
+    let qr = `update kursus set overskrift = "${overskrift}", beskrivelse = "${beskrivelse}", fag = "${fag}", img = "${img}", content = "${content}" where id = ${getId}`;
 
     db.query(qr, (err, result) => {
 
@@ -160,9 +161,10 @@ app.put('/kursus/:id', (req, res) => {
 // delete single data
 app.delete('/kursus/:id', (req, res) => {
 
-    let qID = req.params.id;
+    let getId = req.params.id;
 
-    let qr = ` delete from kursus where id = "${qID}" `;
+
+    let qr = ` delete from kursus where id = ${getId} `;
 
     db.query(qr, (err, result) => {
 

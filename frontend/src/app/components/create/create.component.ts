@@ -31,7 +31,7 @@ export class CreateComponent implements OnInit {
           'beskrivelse': res.data[0].beskrivelse,
           'fag': res.data[0].fag,
           'img': res.data[0].img,
-          'content': res.data[0].content,
+          'content': res.data[0].content
 
         })
       });
