@@ -22,15 +22,24 @@
 <form [formGroup]="userForm" >
 
   <div class="input">
-    <input type="text" placeholder="Enter fullname" formControlName="fullname">
+    <input type="text" placeholder="Enter overskrift" formControlName="overskrift">
+  </div>
+  
+
+  <div class="input">
+    <input type="text" placeholder="Enter beskrivelse" formControlName="beskrivelse">
   </div>
 
   <div class="input">
-    <input type="email" placeholder="Enter email" formControlName="email">
+    <input type="text" placeholder="Enter fag" formControlName="fag">
   </div>
 
   <div class="input">
-    <input type="tel" placeholder="Enter mobil" formControlName="mobil">
+    <input type="text" placeholder="Enter img url" formControlName="img">
+  </div>
+
+  <div class="input">
+    <input type="text" placeholder="Enter content" formControlName="content">
   </div>
 
   <button class="btn" *ngIf="!getParamId" (click)="userSubmit()">Opret kursus</button>

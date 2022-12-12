@@ -27,9 +27,12 @@ export class CreateComponent implements OnInit {
       this.service.getSingleData(this.getParamId).subscribe((res)=> {
         console.log(res, 'res==>');
         this.userForm.patchValue({
-          'fullname': res.data[0].fullname,
-          'email': res.data[0].email,
-          'mobil': res.data[0].mobil
+          'overskrift': res.data[0].overskrift,
+          'beskrivelse': res.data[0].beskrivelse,
+          'fag': res.data[0].fag,
+          'img': res.data[0].img,
+          'content': res.data[0].content,
+
         })
       });
     }
@@ -38,9 +41,16 @@ export class CreateComponent implements OnInit {
   }
 
   userForm = new FormGroup({
-    'fullname': new FormControl('', Validators.required),
-    'email': new FormControl('', Validators.required),
-    'mobil': new FormControl('', Validators.required)
+    // 'fullname': new FormControl('', Validators.required),
+    // 'email': new FormControl('', Validators.required),
+    // 'mobil': new FormControl('', Validators.required)
+
+    'overskrift': new FormControl('', Validators.required),
+    'beskrivelse': new FormControl('', Validators.required),
+    'fag': new FormControl('', Validators.required),
+    'img': new FormControl('', Validators.required),
+    'content': new FormControl('', Validators.required),
+
   });
 
 

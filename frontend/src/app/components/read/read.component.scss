@@ -52,3 +52,39 @@ tr .vaerdi {
     line-height: 40px;
     margin-bottom: 20px;
 }
+
+.kursusContainer {
+    background-color: rgba(0, 0, 0, 0.286);
+    width: 500px;
+    margin: 10px;
+}
+
+.kursusContainer div.img {
+    padding: 0px;
+    margin: 0px;
+    height: 200px;
+    position: relative;
+}
+
+.kursusContainer div.img img {
+    height: 100%;
+    width: 100%;
+}
+
+.kursusContainer p.fag {
+    margin: 0px;
+    padding: 0px;
+    bottom: 0px;
+    position: absolute;
+    left: 38%;
+    text-align: center;
+    background-color: green;
+}
+
+
+
+
+
+app-read.ion-page {
+    margin-top: 100px !important;
+}

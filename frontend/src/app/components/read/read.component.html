@@ -4,33 +4,22 @@
     <p>User deleted.</p>
   </div>
 
-<table class="table">
-  <thead class="head">
-    <tr>
-      <th class="row">ID</th>
-      <th class="row">fullname</th>
-      <th class="row">email</th>
-      <th class="row">mobil</th>
-      <th class="row">edit</th>
-    </tr>
-  </thead>
+
+  <div class="kursusContainer"*ngFor="let us of readData">
+    <div class="img"> <img src="{{us.img}}" >
+      <p class="fag"> {{us.fag}} </p>
+    </div>
+    <p> {{us.overskrift}} </p>
+    <p> {{us.beskrivelse}} </p>
+
+    <button class="deltebtn" (click)="deleteID(us.id)">Delete</button>
+    <button class="updateBtn">
+      <a [routerLink]="['/create', us.id]">Update</a> 
+    </button>
+
+  </div>
   
-  <tbody>
-    <tr *ngFor="let us of readData">
-      <th class="vaerdi row">{{us.id}}</th>
-      <td class="vaerdi">{{us.fullname}}</td>
-      <td class="vaerdi">{{us.email}}</td>
-      <td class="vaerdi">{{us.mobil}}</td>
-      <td class="vaerdi">
-        <button class="deltebtn" (click)="deleteID(us.id)">Delete</button>
-        <button class="updateBtn">
-          <a [routerLink]="['/create', us.id]">Update</a> 
-        </button>
-      </td>
-  
-    </tr>
-  </tbody>
-</table>
+
 
 
 </div>

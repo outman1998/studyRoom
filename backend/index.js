@@ -30,10 +30,10 @@ db.connect(err => {
 
 
 // get all data 
-app.get('/user', (req, res) => {
+app.get('/kursus', (req, res) => {
 
     // selects from user table in database
-    let qr = `select * from user`;
+    let qr = `select * from kursus`;
 
     db.query(qr, (err, result) => {
 
@@ -43,7 +43,7 @@ app.get('/user', (req, res) => {
 
         if (result.length > 0) {
             res.send({
-                message:'all user data',
+                message:'all kursus data',
                 data:result
             });
         }
@@ -55,13 +55,13 @@ app.get('/user', (req, res) => {
 
 
 // get single data via ID
-app.get('/user/:id',(req, res) => {
+app.get('/kursus/:id',(req, res) => {
 
     console.log(req.params.id, 'getid==>');
 
     let getId = req.params.id;
 
-    let qr = `select * from user where id = ${getId}`;
+    let qr = `select * from kursus where id = ${getId}`;
 
     db.query(qr, (err, result) => {
         if(err) {
@@ -70,12 +70,12 @@ app.get('/user/:id',(req, res) => {
 
         if (result.length > 0) {
             res.send({
-                message:'get single data',
+                message:'get single kursus data',
                 data:result
             });
         } else {
             res.send({
-                message: 'data not found...'
+                message: 'kursus data not found...'
             });
         }
     });
@@ -84,18 +84,24 @@ app.get('/user/:id',(req, res) => {
 
 
 // create data ( også kaldet POST i sql)
-app.post('/user', (req, res)=> {
+app.post('/kursus', (req, res)=> {
 
     console.log(req.body, 'create data');
 
     // sætter variabler til og være lig med vores tables værdier.
-    let fullName = req.body.fullname;
-    let eMail = req.body.email;
-    let mobil = req.body.mobil;
+    // let fullName = req.body.fullname;
+    // let eMail = req.body.email;
+    // let mobil = req.body.mobil;
+
+    let overskrift = req.body.overskrift;
+    let beskrivelse = req.body.beskrivelse;
+    let fag = req.body.fag;
+    let img = req.body.img;
+    let content = req.body.content;
 
 
-    let qr = `insert into user (fullname, email, mobil) 
-    values ( '${fullName}', '${eMail}', '${mobil}' )`;
+    let qr = `insert into kursus (overskrift, beskrivelse, fag, img, content) 
+    values ( '${overskrift}', '${beskrivelse}', '${fag}', '${img}', '${content}' )`;
 
     // console.log(qr, 'qr');
 
@@ -117,18 +123,24 @@ app.post('/user', (req, res)=> {
 
 
 // update single data (også kaldet PUT i sql)
-app.put('/user/:id', (req, res) => {
+app.put('/kursus/:id', (req, res) => {
 
     console.log(req.body, 'updated data');
 
     let gID = req.params.id;
 
     // sætter variabler til og være lig med vores tables værdier.
-    let fullName = req.body.fullname;
-    let eMail = req.body.email;
-    let mobil = req.body.mobil;
+    // let fullName = req.body.fullname;
+    // let eMail = req.body.email;
+    // let mobil = req.body.mobil;
 
-    let qr = `update user set fullname = "${fullName}", email = "${eMail}", mobil = "${mobil}" where id = ${gID}`;
+    let overskrift = req.body.overskrift;
+    let beskrivelse = req.body.beskrivelse;
+    let fag = req.body.fag;
+    let img = req.body.img;
+    let content = req.body.content;
+
+    let qr = `update kursus set overskrift = "${overskrift}", beskrivelse = "${beskrivelse}", fag = "${fag}", img = "${img}", content = "${content}" where id = ${gID}`;
 
     db.query(qr, (err, result) => {
 
@@ -146,11 +158,11 @@ app.put('/user/:id', (req, res) => {
 
 
 // delete single data
-app.delete('/user/:id', (req, res) => {
+app.delete('/kursus/:id', (req, res) => {
 
     let qID = req.params.id;
 
-    let qr = ` delete from user where id = "${qID}" `;
+    let qr = ` delete from kursus where id = "${qID}" `;
 
     db.query(qr, (err, result) => {
 
