@@ -28,7 +28,12 @@ const routes: Routes = [
     path: 'create/:id',
     component: CreateComponent,
     pathMatch: 'full'
+  },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./about-us/about-us.module').then( m => m.AboutUsPageModule)
   }
+
 ];
 
 @NgModule({
