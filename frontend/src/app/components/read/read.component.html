@@ -9,13 +9,16 @@
     <div class="img"> <img src="{{us.img}}" >
       <p class="fag"> {{us.fag}} </p>
     </div>
-    <p> {{us.overskrift}} </p>
-    <p> {{us.beskrivelse}} </p>
+    <div class="indhold">
+      <h5> {{us.overskrift}} </h5>
+      <p> {{us.beskrivelse}} </p>
+  
+      <button class="deltebtn" (click)="deleteID(us.id)">Delete</button>
+      <button class="updateBtn">
+        <a [routerLink]="['/create', us.id]">Update</a> 
+      </button>
+    </div>
 
-    <button class="deltebtn" (click)="deleteID(us.id)">Delete</button>
-    <button class="updateBtn">
-      <a [routerLink]="['/create', us.id]">Update</a> 
-    </button>
 
   </div>
   

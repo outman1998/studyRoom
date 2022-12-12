@@ -1,6 +1,4 @@
-body {
-    background: white;
-}
+
 
 tr .row {
     background-color: blue;
@@ -51,36 +49,51 @@ tr .vaerdi {
 }
 
 .kursusContainer {
-    background-color: rgba(0, 0, 0, 0.286);
+    background-color: #f5f5f5;
     width: 300px;
     margin: 10px;
+    border-radius: 3px;
+    color: black;
 }
 
 .kursusContainer div.img {
     padding: 0px;
     margin: 0px;
-    height: 200px;
+    height: 100px;
     position: relative;
 }
 
 .kursusContainer div.img img {
     height: 100%;
     width: 100%;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.kursusContainer .indhold {
+    padding: 10px;
 }
 
 .kursusContainer p.fag {
-    margin: 0px;
-    padding: 5px;
-    bottom: 0px;
+    left: 48%;
+    margin-left: -48px;
+    bottom: -16px;
     position: absolute;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.469);
+    background-color: #f5f5f5;
+    width: fit-content;
+    padding: 5px;
+    font-size: 13px;
 }
+
+.kursusContainer h5, p {
+    text-align: center;
+}
+
 
 
 .container {
     margin: 10px auto;
     margin-top: 100px;
     display: flex;
+    flex-wrap: wrap;
+
 }
