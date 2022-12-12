@@ -1,9 +1,9 @@
 <div class="container">
 
 
-  <p *ngIf="!getParamId"> Opret et kursus ved at udfylde alle kolonner for neden: </p>
+  <p class="txt" *ngIf="!getParamId"> Opret et kursus ved at udfylde alle kolonner for neden: </p>
   <div *ngIf="getParamId"> 
-    <p>Du er nu i gang med at opdatere kursus nr. {{getParamId}}</p> 
+    <p class="txt">Du er nu i gang med at opdatere kursus nr. {{getParamId}}</p> 
     <button class="opdaterbtn"> <a routerLink="/read">Til kursusoversigt</a> </button>
   </div>
 
