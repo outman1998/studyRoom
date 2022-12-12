@@ -7,7 +7,6 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HeroComponent } from '../components/hero/hero.component';
 
-import { NavComponent } from '../components/nav/nav.component';
 import { ContentOneComponent } from '../components/content-one/content-one.component';
 import { ContentTwoComponent } from '../components/content-two/content-two.component';
 import { FooterComponent } from '../components/footer/footer.component';
@@ -32,7 +31,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     HomePage,
     HeroComponent,
-    NavComponent,
     ContentOneComponent,
     ContentTwoComponent,
     FooterComponent,
