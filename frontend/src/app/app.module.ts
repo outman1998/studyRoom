@@ -11,13 +11,16 @@ import {HttpClientModule} from '@angular/common/http';
 import { ApiserviceService } from './services/apiservice.service';
 
 import { AuthModule } from '@auth0/auth0-angular';
-
+import { NavComponent } from './components/nav/nav.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    NavComponent
+  ],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
