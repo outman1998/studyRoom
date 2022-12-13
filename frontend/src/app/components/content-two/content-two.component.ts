@@ -12,7 +12,7 @@ export class ContentTwoComponent implements OnInit {
   ngOnInit() {}
 
   option = { 
-    slidesPerView: 3,
+    slidesPerView: 3.3,
     centeredSlides: true,
     loop: true,
     spaceBetween: 10,
