@@ -49,9 +49,7 @@ export class ReadComponent implements OnInit {
   }
 
 
-  updateID(id: any) {
-
-  }
+  updateID(id:any) {}
 
 
 

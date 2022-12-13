@@ -1,50 +1,4 @@
 
-// .container {
-//   padding-bottom: 100px;
-//   background-color: #fdfdfd;
-//   color: #2f2e41;
-// }
-
-
-// .container .fagene {
-//   display: flex;
-//   justify-content: center;
-// }
-
-// .container h3 {
-//   text-align: center;
-//   margin-bottom: 20px;
-//   font-size: 28px;
-//   margin-top: 0px;
-// }
-
-
-// .fag {
-//   background-color: #b2d4fb;
-//   color: black;
-//   margin: 0px 10px;
-//   border-radius: 5px;
-//   width: 100px;
-//   text-align: center;
-//   padding: 10px 0px;
-// }
-
-// .fag:hover {
-//   background-color: #1571f2;
-//   color: white;
-// }
-
-
-// .fagene {
-//   margin-bottom: 15px;
-// }
-
-// .fagene:last-child {
-//   margin-bottom: 0px;
-// }
-
-
-
 
 ion-card {
   width: 100%;
@@ -86,14 +40,16 @@ ion-card {
 
 .kort {
   background-color: rgb(247 247 247);
-  color: black;
+  color: #2f2e41;
   padding: 0px 20px;
   text-align: left;
 }
 
-.container h4 {
-  color: black;
-  font-size: 28px;
+
+
+.container h5 {
+  color: #2f2e41;
+  font-size: 23px;
   font-weight: bold;
   // width: fit-content;
   // padding: 5px;
@@ -101,3 +57,14 @@ ion-card {
   border-bottom: 1px solid rgba(0, 0, 0, 0.061);
   padding-bottom: 5px;
 }
+
+
+.container h4 {
+  color: #2f2e41;
+  font-size: 28px;
+  font-weight: bold;
+
+}
+// .container h4:first-child {
+//   border-bottom: none;
+// }
