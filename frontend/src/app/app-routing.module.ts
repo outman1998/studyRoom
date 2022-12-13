@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ForloebComponent } from './components/forloeb/forloeb.component';
 import { ReadComponent } from './components/read/read.component';
 import { CreateComponent } from './components/create/create.component'
+import { AuthGuard } from '@auth0/auth0-angular';
 
 
 const routes: Routes = [
@@ -23,11 +24,13 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreateComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'create/:id',
     component: CreateComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate:[AuthGuard]
   },
   {
     path: 'about-us',

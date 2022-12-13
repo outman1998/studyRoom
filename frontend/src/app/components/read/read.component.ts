@@ -16,6 +16,7 @@ export class ReadComponent implements OnInit {
 
   deletedSuccesMsg:any;
 
+
   ngOnInit(): void {
 
     this.service.getAllData().subscribe((res) =>{
@@ -23,7 +24,6 @@ export class ReadComponent implements OnInit {
       console.log(res, "res==>");
 
       this.readData = res.data;
-
     });
 
   }

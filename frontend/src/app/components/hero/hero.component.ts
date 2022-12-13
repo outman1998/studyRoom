@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewportScroller } from "@angular/common";
+import { Router } from "@angular/router";
 
 
 
@@ -11,14 +12,14 @@ import { ViewportScroller } from "@angular/common";
 export class HeroComponent implements OnInit {
 target: HTMLElement | undefined;
 
-  constructor(private scroller: ViewportScroller) { }
+  constructor() { }
 
-  ngOnInit() {}
-
-
-  godown() {
-    console.log("hej");
-    this.scroller.scrollToAnchor("targetRed");
+  ngOnInit() {
   }
+
+
+
+
+
 
 }

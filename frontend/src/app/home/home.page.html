@@ -1,7 +1,121 @@
 <ion-content [fullscreen]="true">
+
+<!-- section hero -->
+  <div class="container">
+
+    <div class="img">
+      <img src="../../../assets/images/Classes.png">
   
-  <app-hero></app-hero>
-  <app-content-one></app-content-one>
-  <app-content-two></app-content-two>
+      <div class="txt">
+        <h1>Digital Academic <br> Platform</h1>
+        <p> We teach people through technology </p>
+        <button class="btn" (click)="scrollDown()">Get started</button>
+      </div>
+    </div>
+  
+  </div>
+<!-- section hero -->
+
+
+
+
+<!-- section one -->
+  <div class="containerr" id="containerr">
+
+    <div class="sectionOne" >
+      <div class="venstre">
+        <img src="../../../assets/images/Student-Discussing-in-library.png">
+      </div>
+  
+      <div class="hojre">
+        <h3>About studyRoom</h3>
+        <p>
+          Studyroom is a platform on which courses in a number of subjects are
+          provided by tutors. Our application helps students, no matter where
+          they may be, face their challenges with various subjects. The end goal is to
+          improve the access to quality education everywhere and in the end create more
+          opportunities to get decent work. Please visit our about page to learn more.
+        </p>
+      </div>
+    </div>
+  
+    <div class="sectionTwo">
+      <div class="venstre">
+        <h3>About courses</h3>
+        <p>
+          The courses on our platform are created by willing tutors. The system in place
+          allows teachers all around the world set up courses for those in need. In turn, our
+          students gain FREE access to these courses to help overcome their educational struggles.
+          Simply sign up and visit the courses section to get started!
+        </p>
+      </div>
+  
+      <div class="hojre">
+        <img src="../../../assets/images/Online-communication-skills.png">
+      </div>
+    </div>
+  </div>
+<!-- section one -->
+
+
+
+
+<!-- section slider -->
+  <div class="containerrr">
+
+    <h4 class="overskrift"> We offer help in a variety of subjects</h4>
+  
+  
+    <ion-slides [options]="option">
+  
+      <ion-slide class="slideren">
+        <ion-card class="kort">
+        <h4>Religion</h4>
+        <p>Alle vores mentorer er certificerede topstuderende. De har gennemgået en screeningsproces og er testet på deres faglige og pædagogiske færdigheder. Mentorerne deltager løbende i kurser og har adgang til undervisningsmateriale fra Gyldendal Uddannelse og Systime, så de kan opdatere deres viden og finde nyt materiale.</p>     
+       </ion-card>
+      </ion-slide>
+  
+      <ion-slide class="slideren">
+        <ion-card class="kort">
+        <h4>Math</h4>
+        <p>Alle vores mentorer er certificerede topstuderende. De har gennemgået en screeningsproces og er testet på deres faglige og pædagogiske færdigheder. Mentorerne deltager løbende i kurser og har adgang til undervisningsmateriale fra Gyldendal Uddannelse og Systime, så de kan opdatere deres viden og finde nyt materiale.</p>     
+       </ion-card>
+      </ion-slide>
+  
+      <ion-slide class="slideren">
+        <ion-card class="kort">
+        <h4>History</h4>
+        <p>Alle vores mentorer er certificerede topstuderende. De har gennemgået en screeningsproces og er testet på deres faglige og pædagogiske færdigheder. Mentorerne deltager løbende i kurser og har adgang til undervisningsmateriale fra Gyldendal Uddannelse og Systime, så de kan opdatere deres viden og finde nyt materiale.</p>     
+       </ion-card>
+      </ion-slide>
+  
+      <ion-slide class="slideren">
+        <ion-card class="kort">
+        <h4>English</h4>
+        <p>Alle vores mentorer er certificerede topstuderende. De har gennemgået en screeningsproces og er testet på deres faglige og pædagogiske færdigheder. Mentorerne deltager løbende i kurser og har adgang til undervisningsmateriale fra Gyldendal Uddannelse og Systime, så de kan opdatere deres viden og finde nyt materiale.</p>     
+       </ion-card>
+      </ion-slide>
+  
+      <ion-slide class="slideren">
+        <ion-card class="kort">
+        <h4>Marketing</h4>
+        <p>Alle vores mentorer er certificerede topstuderende. De har gennemgået en screeningsproces og er testet på deres faglige og pædagogiske færdigheder. Mentorerne deltager løbende i kurser og har adgang til undervisningsmateriale fra Gyldendal Uddannelse og Systime, så de kan opdatere deres viden og finde nyt materiale.</p>     
+       </ion-card>
+      </ion-slide>
+  
+      <ion-slide class="slideren">
+        <ion-card class="kort">
+        <h4>Biology</h4>
+        <p>Alle vores mentorer er certificerede topstuderende. De har gennemgået en screeningsproces og er testet på deres faglige og pædagogiske færdigheder. Mentorerne deltager løbende i kurser og har adgang til undervisningsmateriale fra Gyldendal Uddannelse og Systime, så de kan opdatere deres viden og finde nyt materiale.</p>     
+       </ion-card>
+      </ion-slide>
+   
+  
+    </ion-slides>
+  
+  </div>
+<!-- section slider -->
+
+
   <app-footer></app-footer>
 </ion-content>
