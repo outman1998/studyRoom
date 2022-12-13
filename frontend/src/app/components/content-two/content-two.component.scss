@@ -33,7 +33,7 @@ ion-card {
 
 .container {
   background-color: #fdfdfd;
-  padding: 100px;
+  padding: 100px 20px;
 }
 
 
@@ -68,3 +68,16 @@ ion-card {
 // .container h4:first-child {
 //   border-bottom: none;
 // }
+
+
+@media only screen and (min-width: 1100px)  {
+  .container {
+    background-color: #fdfdfd;
+    padding: 100px;
+  }
+
+  .container .overskrift {
+    margin-left: 20px;
+}
+  
+}
