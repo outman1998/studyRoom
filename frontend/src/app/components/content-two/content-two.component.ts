@@ -16,8 +16,8 @@ export class ContentTwoComponent implements OnInit {
     centeredSlides: true,
     loop: true,
     spaceBetween: 10,
-    // autoplay: true,
-    // speed: 600
+    autoplay: true,
+    speed: 600
 
   }
 

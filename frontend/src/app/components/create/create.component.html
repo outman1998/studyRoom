@@ -1,54 +1,57 @@
-<div class="container">
+<ion-content [fullscreen]="true" style="background-color: white;">
+  <div class="container">
 
 
-  <p class="txt" *ngIf="!getParamId"> Opret et kursus ved at udfylde alle kolonner for neden: </p>
-  <div *ngIf="getParamId"> 
-    <p class="txt">Du er nu i gang med at opdatere kursus nr. {{getParamId}}</p> 
-    <button class="opdaterbtn"> <a routerLink="/read">Til kursusoversigt</a> </button>
-  </div>
-
-  <div *ngIf="errorMsg" class="err">
-    <p> {{errorMsg}}</p>
-  </div>
-
-  <div *ngIf="succesMsg" class="succesMsg">
-    <p>{{succesMsg}}</p>
-  </div>
-
-  <div *ngIf="succesMsg && getParamId" class="succesMsg">
-    <p>Succesfully updated the user!</p>
-  </div>
-
-<form [formGroup]="userForm" >
-
-  <div class="input">
-    <input type="text" placeholder="Enter overskrift" formControlName="overskrift">
+    <p class="txt" *ngIf="!getParamId"> Opret et kursus ved at udfylde alle kolonner for neden: </p>
+    <div *ngIf="getParamId"> 
+      <p class="txt">Du er nu i gang med at opdatere kursus nr. {{getParamId}}</p> 
+      <button class="opdaterbtn"> <a routerLink="/read">Til kursusoversigt</a> </button>
+    </div>
+  
+    <div *ngIf="errorMsg" class="err">
+      <p> {{errorMsg}}</p>
+    </div>
+  
+    <div *ngIf="succesMsg" class="succesMsg">
+      <p>{{succesMsg}}</p>
+    </div>
+  
+    <div *ngIf="succesMsg && getParamId" class="succesMsg">
+      <p>Succesfully updated the user!</p>
+    </div>
+  
+  <form [formGroup]="userForm" >
+  
+    <div class="input">
+      <input type="text" placeholder="Enter overskrift" formControlName="overskrift">
+    </div>
+    
+  
+    <div class="input">
+      <input type="text" placeholder="Enter beskrivelse" formControlName="beskrivelse">
+    </div>
+  
+    <div class="input">
+      <input type="text" placeholder="Enter fag" formControlName="fag">
+    </div>
+  
+    <div class="input">
+      <input type="text" placeholder="Enter img url" formControlName="img">
+    </div>
+  
+    <div class="input content">
+      <input type="text" placeholder="Enter content" formControlName="content">
+    </div>
+  
+    <button class="btn" *ngIf="!getParamId" (click)="userSubmit()">Opret kursus</button>
+    <button class="btn" *ngIf="getParamId" (click)="userUpdate()">Opdater kursus</button>
+  
+  </form>
+  
+  
   </div>
   
-
-  <div class="input">
-    <input type="text" placeholder="Enter beskrivelse" formControlName="beskrivelse">
-  </div>
-
-  <div class="input">
-    <input type="text" placeholder="Enter fag" formControlName="fag">
-  </div>
-
-  <div class="input">
-    <input type="text" placeholder="Enter img url" formControlName="img">
-  </div>
-
-  <div class="input">
-    <input type="text" placeholder="Enter content" formControlName="content">
-  </div>
-
-  <button class="btn" *ngIf="!getParamId" (click)="userSubmit()">Opret kursus</button>
-  <button class="btn" *ngIf="getParamId" (click)="userUpdate()">Opdater kursus</button>
-
-</form>
-
-
-</div>
+</ion-content>
 
 
 

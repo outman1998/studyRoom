@@ -1,28 +1,32 @@
-<div class="container">
-
-  <div *ngIf="deletedSuccesMsg" class="err">
-    <p>User deleted.</p>
-  </div>
+<ion-content [fullscreen]="true" style="background-color: white;">
 
 
-  <div class="kursusContainer"*ngFor="let us of readData">
-    <div class="img"> <img src="{{us.img}}" >
-      <p class="fag"> {{us.fag}} </p>
+  <div class="container">
+
+    <div *ngIf="deletedSuccesMsg" class="err">
+      <p>User deleted.</p>
     </div>
-    <div class="indhold">
-      <h5> {{us.overskrift}} </h5>
-      <p> {{us.beskrivelse}} </p>
   
-      <button class="deltebtn" (click)="deleteID(us.id)">Delete</button>
-      <button class="updateBtn">
-        <a [routerLink]="['/create', us.id]">Update</a> 
-      </button>
+  
+    <div class="kursusContainer"*ngFor="let us of readData">
+      <div class="img"> <img src="{{us.img}}" >
+        <p class="fag"> {{us.fag}} </p>
+      </div>
+      <div class="indhold">
+        <h5> {{us.overskrift}} </h5>
+        <p> {{us.beskrivelse}} </p>
+    
+        <button class="deltebtn" (click)="deleteID(us.id)">Delete</button>
+        <button class="updateBtn">
+          <a [routerLink]="['/create', us.id]">Update</a> 
+        </button>
+      </div>
+  
+  
     </div>
-
-
+  
   </div>
   
 
+</ion-content>
 
-
-</div>
