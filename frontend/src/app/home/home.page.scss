@@ -74,13 +74,22 @@
 
 
 .txt .btn {
-  background-color: #2f2e41;
-  padding: 10px 20px;
+  background-color: #f5fbf6;
+  border: 1px solid #2f2e41;
   border-radius: 5px;
-  color: white;
+  color: #2f2e41;
   font-weight: bold;
   width: fit-content;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.txt .btn:hover {
+  background-color: #2f2e41;
+  transition: 500ms;
+  color: white;
 }
 
 
