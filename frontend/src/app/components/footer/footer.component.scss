@@ -37,12 +37,20 @@
 
 .tilmeldBtn {
   background-color: #2f2e41;
+  border: 1px solid #2f2e41;
   color: white;
   border-radius: 5px;
   padding: 5px 13px;
   text-align: center;
   width: fit-content;
   cursor: pointer;
+}
+
+.tilmeldBtn:hover {
+  background-color: white;
+  border: 1px solid #2f2e41;
+  border-radius: 5px;
+  color: #2f2e41;
 }
 
 
