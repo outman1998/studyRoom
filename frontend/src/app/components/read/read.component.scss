@@ -90,10 +90,31 @@ tr .vaerdi {
 
 
 
-.container {
+.containerr {
     margin: 10px auto;
-    margin-top: 100px;
     display: flex;
     flex-wrap: wrap;
 
 }
+
+
+.containerParent {
+    margin-top: 100px;
+}
+
+
+
+
+.search {
+    width: 200px;
+    border-radius: 5px;
+    background-color: white;
+    margin-left: 14px;
+    padding: 5px 2px;
+}
+
+
+.overskrift {
+    margin-left: 14px;
+}
+

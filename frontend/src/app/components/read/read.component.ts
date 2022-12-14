@@ -16,7 +16,6 @@ export class ReadComponent implements OnInit {
 
   deletedSuccesMsg:any;
 
-
   ngOnInit(): void {
 
     this.service.getAllData().subscribe((res) =>{
