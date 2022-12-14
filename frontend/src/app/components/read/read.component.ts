@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ApiserviceService } from 'src/app/services/apiservice.service';
+import { AuthService } from '@auth0/auth0-angular';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { ApiserviceService } from 'src/app/services/apiservice.service';
 })
 export class ReadComponent implements OnInit {
 
-  constructor(private service: ApiserviceService) { }
+  constructor(private service: ApiserviceService, public auth: AuthService) { }
 
   readData:any;
 

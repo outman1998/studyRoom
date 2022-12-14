@@ -19,8 +19,12 @@
           <h5> {{us.overskrift}} </h5>
           <p> {{us.beskrivelse}} </p>
       
-          <button class="deltebtn" (click)="deleteID(us.id)">Delete</button>
-          <button class="updateBtn">
+          <button class="deltebtn" 
+          (click)="deleteID(us.id)" 
+          *ngIf="auth.isAuthenticated$ | async;">Delete
+          </button>
+          <button class="updateBtn" 
+          *ngIf="auth.isAuthenticated$ | async;">
             <a [routerLink]="['/create', us.id]">Update</a> 
           </button>
         </div>
