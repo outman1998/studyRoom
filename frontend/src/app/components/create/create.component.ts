@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiserviceService } from 'src/app/services/apiservice.service';
 
 import { ActivatedRoute } from '@angular/router';
+import { count } from 'console';
 
 @Component({
   selector: 'app-create',
@@ -55,7 +56,7 @@ export class CreateComponent implements OnInit {
 
 
 
-  // create new user
+  // create new course
   userSubmit() {
 
     if(this.userForm.valid) 

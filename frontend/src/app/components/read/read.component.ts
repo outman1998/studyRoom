@@ -14,6 +14,7 @@ export class ReadComponent implements OnInit {
   constructor(private service: ApiserviceService, public auth: AuthService) { }
 
   readData:any;
+  countCourses = 0;
 
   deletedSuccesMsg:any;
 
@@ -24,6 +25,7 @@ export class ReadComponent implements OnInit {
       console.log(res, "res==>");
 
       this.readData = res.data;
+      this.countCourses = this.readData.length;
     });
 
   }
@@ -50,6 +52,8 @@ export class ReadComponent implements OnInit {
 
 
   updateID(id:any) {}
+
+
 
 
 
