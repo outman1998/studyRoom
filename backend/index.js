@@ -89,21 +89,15 @@ app.post('/kursus', (req, res)=> {
     console.log(req.body, 'create data');
 
     // sætter variabler til og være lig med vores tables værdier.
-    // let fullName = req.body.fullname;
-    // let eMail = req.body.email;
-    // let mobil = req.body.mobil;
-
     let overskrift = req.body.overskrift;
     let beskrivelse = req.body.beskrivelse;
     let fag = req.body.fag;
     let img = req.body.img;
     let content = req.body.content;
 
-
+    // query
     let qr = `insert into kursus (overskrift, beskrivelse, fag, img, content) 
     values ( '${overskrift}', '${beskrivelse}', '${fag}', '${img}', '${content}' )`;
-
-    // console.log(qr, 'qr');
 
     db.query(qr, (err, result) => {
 
@@ -129,18 +123,14 @@ app.put('/kursus/:id', (req, res) => {
 
     let getId = req.params.id;
 
-
     // sætter variabler til og være lig med vores tables værdier.
-    // let fullName = req.body.fullname;
-    // let eMail = req.body.email;
-    // let mobil = req.body.mobil;
-
     let overskrift = req.body.overskrift;
     let beskrivelse = req.body.beskrivelse;
     let fag = req.body.fag;
     let img = req.body.img;
     let content = req.body.content;
 
+    // query
     let qr = `update kursus set overskrift = "${overskrift}", beskrivelse = "${beskrivelse}", fag = "${fag}", img = "${img}", content = "${content}" where id = ${getId}`;
 
     db.query(qr, (err, result) => {
@@ -163,7 +153,7 @@ app.delete('/kursus/:id', (req, res) => {
 
     let getId = req.params.id;
 
-
+    // query
     let qr = ` delete from kursus where id = ${getId} `;
 
     db.query(qr, (err, result) => {
