@@ -2,7 +2,12 @@
 
   <div class="containerParent">
     <h4 class="overskrift"> All Courses ({{countCourses}}) </h4>
-    <input class="search" type="text" placeholder="Search..">
+    <ion-searchbar 
+    placeholder="try marketing" 
+    [(ngModel)]="searchTerm" 
+    showCancelButton="focus" animated>
+
+    </ion-searchbar>
 
     <div class="containerr">
       <div *ngIf="deletedSuccesMsg" class="err">
@@ -10,7 +15,7 @@
       </div>
     
     
-      <div class="kursusContainer"*ngFor="let us of readData">
+      <div class="kursusContainer"*ngFor="let us of readData | filter:searchTerm">
         <div class="img"> <img src="{{us.img}}" >
           <p class="fag"> {{us.fag}} </p>
         </div>

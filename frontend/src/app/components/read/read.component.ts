@@ -15,8 +15,10 @@ export class ReadComponent implements OnInit {
 
   readData:any;
   countCourses = 0;
-
   deletedSuccesMsg:any;
+
+  searchTerm: any;
+  
 
   ngOnInit(): void {
 
