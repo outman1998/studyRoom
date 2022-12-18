@@ -16,25 +16,49 @@ tr .vaerdi {
     text-align: left;
 }
 
-
 .deltebtn {
+    padding: 7px 10px;
+    border-radius: 3px;
+    background-color: white;
+    font-weight: bold;
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    color: #2f2e41;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.deltebtn:hover {
     padding: 7px 10px;
     border-radius: 3px;
     background-color: red;
     font-weight: bold;
+    color: white;
     margin-right: 10px;
 }
 
-.updateBtn {
+
+
+
+
+
+.updateBtn a {
+    padding: 7px 10px;
+    border-radius: 3px;
+    background-color: white;
+    font-weight: bold;
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    color: #2f2e41;
+    text-decoration: none;
+}
+
+.updateBtn a:hover {
+    color: white;
+    text-decoration: none;
     padding: 7px 10px;
     border-radius: 3px;
     background-color: green;
     font-weight: bold;
-}
-
-.updateBtn a {
     color: white;
-    text-decoration: none;
 }
 
 .err {
