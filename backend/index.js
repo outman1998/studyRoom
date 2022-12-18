@@ -18,7 +18,7 @@ const db = mysql.createConnection({
     user:'root',
     password:'root',
     database:'simpledb',
-    port:8889,
+    port:3006,
     socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
 })
 
@@ -84,6 +84,8 @@ app.get('/kursus/:id',(req, res) => {
 
 
 // create data ( også kaldet POST i sql)
+
+
 app.post('/kursus', (req, res)=> {
 
     console.log(req.body, 'create data');
