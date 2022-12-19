@@ -1,7 +1,7 @@
-<div class="container">
+<div id="desktopmenu" class="container">
 
   <div class="logo">
-    <p> <a routerLink="/home">studyRoom</a> </p>
+    <p> <a routerLink="/home">study<b>Room</b></a> </p>
   </div>
 
   <div class="nav">
@@ -16,8 +16,10 @@
   <div class="btns">
     <ng-template #loggedOut>
     <button class="btn btn1" (click)="auth.loginWithRedirect()">Sign In</button>
+    <button class="btn btn2">Sign Up</button>
     </ng-template>
-    <div *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+    <div class="logoutdiv" *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+      <ion-button routerLink="/profile"  fill="clear"  color="light" *ngIf="auth.user$ | async as user;">{{ user.email }}</ion-button>
       <button class="btn btn1" (click)="auth.logout()">
         Log out
       </button>

@@ -53,7 +53,33 @@ app.get('/kursus', (req, res) => {
 
 });
 
+// get all courses created by specific user
+app.get('/kursus/:email',(req, res) => {
 
+    console.log(req.params.email, 'getid==>');
+
+    let getEmail = req.params.email;
+
+    let qr = `select * from kursus where email = '${getEmail}'`;
+
+    db.query(qr, (err, result) => {
+        if(err) {
+            console.log(err);
+        }
+
+        if (result.length > 0) {
+            res.send({
+                message:'get single kursus data',
+                data:result
+            });
+        } else {
+            res.send({
+                message: 'kursus data not found...'
+            });
+        }
+    });
+
+});
 // get single data via ID
 app.get('/kursus/:id',(req, res) => {
 
@@ -84,22 +110,27 @@ app.get('/kursus/:id',(req, res) => {
 
 
 // create data ( også kaldet POST i sql)
-
-
 app.post('/kursus', (req, res)=> {
 
     console.log(req.body, 'create data');
 
     // sætter variabler til og være lig med vores tables værdier.
+    // let fullName = req.body.fullname;
+    // let eMail = req.body.email;
+    // let mobil = req.body.mobil;
+
     let overskrift = req.body.overskrift;
     let beskrivelse = req.body.beskrivelse;
     let fag = req.body.fag;
     let img = req.body.img;
     let content = req.body.content;
+    let email = req.body.email;
 
-    // query
-    let qr = `insert into kursus (overskrift, beskrivelse, fag, img, content) 
-    values ( '${overskrift}', '${beskrivelse}', '${fag}', '${img}', '${content}' )`;
+
+    let qr = `insert into kursus (overskrift, beskrivelse, fag, img, content, email) 
+    values ( '${overskrift}', '${beskrivelse}', '${fag}', '${img}', '${content}','${email}' )`;
+
+    // console.log(qr, 'qr');
 
     db.query(qr, (err, result) => {
 

@@ -5,7 +5,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiserviceService } from 'src/app/services/apiservice.service';
 
 import { ActivatedRoute } from '@angular/router';
-import { count } from 'console';
+
+import { AuthService} from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-create',
@@ -14,11 +15,12 @@ import { count } from 'console';
 })
 export class CreateComponent implements OnInit {
 
-  constructor(private service: ApiserviceService, private router: ActivatedRoute) { }
+  constructor(private service: ApiserviceService, private router: ActivatedRoute, public auth: AuthService) { }
 
   errorMsg:any;
   succesMsg:any;
   getParamId:any;
+  myCourses:any;
 
   ngOnInit(): void {
     this.getParamId = this.router.snapshot.paramMap.get('id');
@@ -37,6 +39,22 @@ export class CreateComponent implements OnInit {
         })
       });
     }
+    this.auth.user$.subscribe(user => {user?.email})
+
+
+    this.auth.user$.subscribe(user => {
+      console.log(user?.email);
+      this.userForm.patchValue({
+        email: user?.email
+      });
+      this.service.getSingleData(user?.email).subscribe(email => {
+        console.log(user?.email, 'DET FUNGERER')
+
+        this.myCourses = email.data;
+
+
+      });
+    });
 
 
   }
@@ -51,12 +69,13 @@ export class CreateComponent implements OnInit {
     'fag': new FormControl('', Validators.required),
     'img': new FormControl('', Validators.required),
     'content': new FormControl('', Validators.required),
+    'email': new FormControl('', Validators.required)
 
   });
 
 
 
-  // create new course
+  // create new user
   userSubmit() {
 
     if(this.userForm.valid) 
@@ -64,7 +83,13 @@ export class CreateComponent implements OnInit {
       console.log(this.userForm.value);
       this.service.createData(this.userForm.value).subscribe((res)=> {
         console.log(res, 'res==>');
-        this.userForm.reset();
+        this.userForm.controls['overskrift'].reset();
+        this.userForm.controls['beskrivelse'].reset();
+        this.userForm.controls['fag'].reset();
+        this.userForm.controls['img'].reset();
+        this.userForm.controls['content'].reset();
+
+
         this.succesMsg = res.message;
       });
     } else 
@@ -72,6 +97,15 @@ export class CreateComponent implements OnInit {
       this.errorMsg = "all fields are required!"
       alert(this.errorMsg)
     }
+    this.auth.user$.subscribe(user => {
+      this.service.getSingleData(user?.email).subscribe(email => {
+        console.log(user?.email, 'DET FUNGERER')
+
+        this.myCourses = email.data;
+
+
+      });
+    });
 
   }
 
