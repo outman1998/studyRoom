@@ -25,7 +25,7 @@ const db = mysql.createConnection({
 // check database connection
 db.connect(err => {
     if (err) {console.log(err, 'dberr');}
-    console.log('database connected...');
+    console.log('database connected....');
 });
 
 
@@ -162,9 +162,10 @@ app.put('/kursus/:id', (req, res) => {
     let fag = req.body.fag;
     let img = req.body.img;
     let content = req.body.content;
+    let email = req.body.email;
 
     // query
-    let qr = `update kursus set overskrift = "${overskrift}", beskrivelse = "${beskrivelse}", fag = "${fag}", img = "${img}", content = "${content}" where id = ${getId}`;
+    let qr = `update kursus set overskrift = "${overskrift}", beskrivelse = "${beskrivelse}", fag = "${fag}", img = "${img}", content = "${content}", email = "${email}" where id = ${getId}`;
 
     db.query(qr, (err, result) => {
 
