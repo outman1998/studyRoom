@@ -14,11 +14,11 @@ export class ReadComponent implements OnInit {
   constructor(private service: ApiserviceService, public auth: AuthService) { }
 
   readData:any;
-  countCourses = 0;
   deletedSuccesMsg:any;
 
   searchTerm: any;
   
+  countCourses = 0;
 
   ngOnInit(): void {
 
@@ -54,6 +54,10 @@ export class ReadComponent implements OnInit {
 
 
   updateID(id:any) {}
+
+  goToCoursesDetails() {
+    
+  }
 
 
 

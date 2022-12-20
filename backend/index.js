@@ -140,7 +140,7 @@ app.post('/kursus', (req, res)=> {
         console.log(result, 'result');
 
         res.send({
-            message: 'data inserted succuesfully!'
+            message: 'Course created succesfully'
         });
 
     });
@@ -174,7 +174,7 @@ app.put('/kursus/:id', (req, res) => {
         }
 
         res.send({
-            message: 'data updated'
+            message: 'User updated succesfully'
         });
 
     });
