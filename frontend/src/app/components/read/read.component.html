@@ -1,48 +1,49 @@
-<ion-content [fullscreen]="true" style="background-color: white;">
+<ion-content [fullscreen]="true">
 
   <div class="containerParent">
+
     <h4 class="overskrift"> All Courses ({{countCourses}}) </h4>
     <ion-searchbar 
     placeholder="Search for a topic" 
     [(ngModel)]="searchTerm" 
     showCancelButton="focus" animate class="searchbar">
-
     </ion-searchbar>
 
     <div class="containerr">
+
       <div *ngIf="deletedSuccesMsg" class="err">
         <p>User deleted.</p>
       </div>
     
+      <!-- make a details component for the details of every course -->
     
       <div class="kursusContainer"*ngFor="let us of readData | filter:searchTerm">
-        <div class="img"> <img src="{{us.img}}" >
-          <p class="fag"> {{us.fag}} </p>
-        </div>
-        <div class="indhold">
-          <h5> {{us.overskrift}} </h5>
-          <p> {{us.beskrivelse}} </p>
-      
-          <button class="deltebtn" 
-          (click)="deleteID(us.id)" 
-          *ngIf="auth.isAuthenticated$ | async;">Delete
-          </button>
-          <button class="updateBtn" 
-          *ngIf="auth.isAuthenticated$ | async;">
-            <a [routerLink]="['/create', us.id]">Update</a> 
-          </button>
-        </div>
-    
-    
+        <a 
+        class="a"
+        [routerLink]="['/cetailsCom', us.id]">
+          <div class="img"> <img src="{{us.img}}" >
+            <p class="fag"> {{us.fag}} </p>
+          </div>
+  
+          <div class="indhold">
+            <h5> {{us.overskrift}} </h5>
+            <p> {{us.beskrivelse}} </p>
+            <button class="deltebtn" 
+            (click)="deleteID(us.id)" 
+            *ngIf="auth.isAuthenticated$ | async;">Delete
+            </button>
+            <button class="updateBtn" 
+            *ngIf="auth.isAuthenticated$ | async;">
+              <a [routerLink]="['/create', us.id]">Update</a> 
+            </button>
+          </div>
+        </a>
+
       </div>
     
     </div>
 
-
   </div>
-
-
-  
 
 </ion-content>
 

@@ -117,7 +117,7 @@ export class CreateComponent implements OnInit {
       this.service.updateData(this.userForm.value, this.getParamId).subscribe((res)=> {
         console.log(res, 'res Updated');
         this.succesMsg = res.message;
-        // this.userForm.reset();
+        this.userForm.reset();
 
       });
     } else {

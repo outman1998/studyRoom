@@ -64,14 +64,10 @@ tr .vaerdi {
 }
 
 .err {
-    background-color: #ff0000a6;
-    color: white;
-    font-size: 20px;
     border-radius: 3px;
-    height: 40px;
     font-weight: bold;
-    line-height: 40px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .kursusContainer {
@@ -156,4 +152,10 @@ tr .vaerdi {
 
 input.searchbar-input.sc-ion-searchbar-md {
     border-radius: 20px;
+}
+
+
+.a {
+    text-decoration: none;
+    color: #2f2e41;
 }
