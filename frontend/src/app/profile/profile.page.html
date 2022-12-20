@@ -3,8 +3,9 @@
     <img src="{{user.picture}}" alt="">
     <h2>{{user.email}}</h2>
   </div>
-  
-  <ion-card class="courses-card" color="light" *ngFor="let ed of myCourses">
+  <div class="courses-container">
+  <ion-card class="courses-card" *ngFor="let ed of myCourses">
+    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
     <ion-card-header>
       <ion-card-title>{{ed.overskrift}}</ion-card-title>
       <ion-card-subtitle>{{ed.fag}}</ion-card-subtitle>
@@ -12,13 +13,13 @@
   
     <ion-card-content>
       {{ed.beskrivelse}}
+      <div id="spacer"></div>
     </ion-card-content>
-    
     <div class="buttondown">
-    <ion-button (click)="deleteID(ed.id)" fill="clear" color="danger" ><ion-icon name="close-circle-outline"></ion-icon>&nbsp;DELETE</ion-button>
-    <ion-button fill="clear" color="primary" ><ion-icon name="refresh-circle-outline"></ion-icon>&nbsp;Update</ion-button>
-    <ion-button fill="clear" color="primary" ><ion-icon name="enter-outline"></ion-icon>&nbsp;content</ion-button>
+    <ion-button size="small" (click)="deleteID(ed.id)" fill="clear" color="danger" ><ion-icon name="close-circle-outline"></ion-icon>&nbsp;DELETE</ion-button>
+    <ion-button size="small" fill="clear" color="primary" ><ion-icon name="refresh-circle-outline"></ion-icon>&nbsp;Update</ion-button>
     </div>
   </ion-card>
+</div>
   </ion-content>
   
