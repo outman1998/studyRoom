@@ -14,12 +14,12 @@ app.use(bodyparser.json());
 // inside mamp you can find socket, port, user, password, host
 // database is the db you create in phpmyadmin
 const db = mysql.createConnection({
-    host:'127.0.0.1',
-    user:'root',
-    password:'root',
-    database:'simpledb',
-    port:3006,
-    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
+    host:'mysql3.unoeuro.com',
+    user:'jacobgervin_dk',
+    password:'dtR3cFxrzHna42mh5DGE',
+    database:'jacobgervin_dk_db',
+    port:3306,
+
 })
 
 
@@ -34,7 +34,7 @@ db.connect(err => {
 app.get('/kursus', (req, res) => {
 
     // selects from user table in database
-    let qr = `select * from kursus`;
+    let qr = `SELECT * FROM kursus`;
 
     db.query(qr, (err, result) => {
 
