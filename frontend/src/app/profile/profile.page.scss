@@ -1,12 +1,17 @@
 .myprofile {
     margin-top: 100px;
     margin-left: 30px;
+    display: flex;
+    flex-direction: row;
 }
 
 .myprofile img {
     width: 75px;
     height: 75px;
     border-radius: 50px;
+}
+.myprofile h2 {
+margin-left: 20px;
 }
 .courses-container {
     width: 100vw;
