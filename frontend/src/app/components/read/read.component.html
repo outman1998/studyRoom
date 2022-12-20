@@ -20,7 +20,7 @@
       <div class="kursusContainer"*ngFor="let us of readData | filter:searchTerm">
         <a 
         class="a"
-        [routerLink]="['/cetailsCom', us.id]">
+        [routerLink]="['/detailsCom', us.id]">
           <div class="img"> <img src="{{us.img}}" >
             <p class="fag"> {{us.fag}} </p>
           </div>
