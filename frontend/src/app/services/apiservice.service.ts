@@ -15,7 +15,7 @@ export class ApiserviceService {
   
 
   // connect frontend to backend
-  apiUrl = 'http://localhost:3000/kursus';
+  apiUrl = 'mysql3.unoeuro.com/kursus';
 
   // get all data
   getAllData():Observable<any> {
