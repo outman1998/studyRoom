@@ -8,7 +8,41 @@
     height: 75px;
     border-radius: 50px;
 }
-
-ion-card {
-    width: 50%;
+.courses-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+.courses-card {
+    width: 31vw;
+    height: 400px;
+    position: relative;
+}
+
+.buttondown {
+    margin-top: 200px;
+    bottom: 0;
+    position: absolute;
+}
+
+@media screen and (max-width: 992px) {
+    .courses-card {
+        width: 31vw;
+        height: 400px;
+    }
+  }
+  @media screen and (max-width: 856px) {
+    .courses-card {
+        width: 46vw;
+        height: 350px;
+    }
+  }
+  @media screen and (max-width: 583px) {
+    .courses-card {
+        width: 90vw;
+        height: 400px;
+    }
+  }
