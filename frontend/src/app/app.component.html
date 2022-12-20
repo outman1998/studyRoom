@@ -19,9 +19,9 @@
           <ion-label routerLink="/about-us">Why Pick Us?</ion-label>
         </ion-item>
       </ion-list>
-      <div class="userinfo">
+      <div *ngIf="auth.user$ | async as user;" class="userinfo">
         <p>Go to your profile</p>
-        <ion-button routerLink="/profile" style="text-transform:uppercase;" fill="clear"   *ngIf="auth.user$ | async as user;">{{user.email}}</ion-button>
+        <ion-button routerLink="/profile" style="text-transform:uppercase;" fill="clear">{{user.email}}</ion-button>
       </div>
     </ion-content>
   </ion-menu>
