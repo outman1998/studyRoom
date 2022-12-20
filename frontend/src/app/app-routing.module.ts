@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { ForloebComponent } from './components/forloeb/forloeb.component';
 import { ReadComponent } from './components/read/read.component';
 import { CreateComponent } from './components/create/create.component'
 import { AuthGuard } from '@auth0/auth0-angular';
@@ -35,7 +34,8 @@ const routes: Routes = [
   {
     path: 'about-us',
     loadChildren: () => import('./about-us/about-us.module').then( m => m.AboutUsPageModule)
-  },  {
+  },
+  {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   }
