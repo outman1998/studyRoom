@@ -22,6 +22,17 @@ const db = mysql.createConnection({
     socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
 })
 
+// module.exports = {
+//     HOST: 'us-cdbr-east-06.cleardb.net',
+//     USER: 'bd01faf9cbd515',
+//     PASSWORD: '9a0318b0',
+//     DB: 'heroku_d6c798b396e8031'
+// };
+
+
+
+
+
 // check database connection
 db.connect(err => {
     if (err) {console.log(err, 'dberr');}
