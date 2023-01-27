@@ -39,20 +39,16 @@ export class CreateComponent implements OnInit {
         })
       });
     }
+    
     this.auth.user$.subscribe(user => {user?.email})
 
 
     this.auth.user$.subscribe(user => {
-      console.log(user?.email);
       this.userForm.patchValue({
         email: user?.email
       });
       this.service.getSingleData(user?.email).subscribe(email => {
-        console.log(user?.email, 'DET FUNGERER')
-
         this.myCourses = email.data;
-
-
       });
     });
 
@@ -60,9 +56,6 @@ export class CreateComponent implements OnInit {
   }
 
   userForm = new FormGroup({
-    // 'fullname': new FormControl('', Validators.required),
-    // 'email': new FormControl('', Validators.required),
-    // 'mobil': new FormControl('', Validators.required)
 
     'overskrift': new FormControl('', Validators.required),
     'beskrivelse': new FormControl('', Validators.required),
@@ -75,7 +68,7 @@ export class CreateComponent implements OnInit {
 
 
 
-  // create new user
+  // create new course
   userSubmit() {
 
     if(this.userForm.valid) 
@@ -95,15 +88,11 @@ export class CreateComponent implements OnInit {
     } else 
     {
       this.errorMsg = "all fields are required!"
-      alert(this.errorMsg)
     }
+    
     this.auth.user$.subscribe(user => {
       this.service.getSingleData(user?.email).subscribe(email => {
-        console.log(user?.email, 'DET FUNGERER')
-
         this.myCourses = email.data;
-
-
       });
     });
 

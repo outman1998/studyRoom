@@ -16,7 +16,6 @@ import { NavComponent } from './components/nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +28,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule,
     AuthModule.forRoot({
-    domain: 'dev-l5ni5uzfmntgm850.us.auth0.com',
-    clientId: 'RpKts7o2RhyYXRUE3f8Xhxv9ialCMhSi'
-  }),
+      domain: 'studyroomprojekt.eu.auth0.com',
+      clientId: '3vwl5IyYtFQ1AGffYrnCNhAstvwcJ2gd'
+    }),
   FormsModule,
   ReactiveFormsModule
   ],

@@ -1,85 +1,13 @@
 .container {
-    margin: 0px auto;
     margin-top: 100px;
-    text-align: center;
-    margin-bottom: 100px;
-}
-
-.txt {
-    color: #2f2e41;
-}
-
-.container .input input {
-    width: 300px;
-    padding: 10px;
-    margin: 10px 0px;
-    color: #2f2e41;
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid #2f2e41;
-}
-
-.container .btn {
-    padding: 10px 15px;
-    border-radius: 3px;
-    background-color: #2f2e41e2;
-    color: white;
-    border: 1px solid #2f2e41;
-    width: 300px;
-}
-
-.container .btn:hover {
-  background-color: #2f2e41;
-  color: white;
-  border: 1px solid #2f2e41;
-  transition: 500ms;
-}
-
-.err {
-  background-color: rgb(0 0 0 / 9%);
-  color: black;
-  font-size: 20px;
-  margin: auto;
-  width: 300px;
-  padding: 0px 10px;
-  border-radius: 3px;
-  height: 40px;
-  font-weight: bold;
-  line-height: 40px;
-}
-
-.succesMsg {
-  background-color: rgb(0 0 0 / 4%);
-  color: black;
-  font-size: 15px;
-  margin: auto;
-  width: 300px;
-  display: flex;
-  align-items: center;
-  padding: 0px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.thumpsup {
-  font-size: 25px;
-}
-
-.succesMsg p {
-  margin-right: 7px;
-}
-
-
-.opdaterbtn {
-    background-color: #17171721;
-    padding: 10px;
-    border-radius: 3px;
-}
-
-.opdaterbtn a {
-    text-decoration: none;
     color: black;
 }
+
+.kursuscontainer {
+  margin: auto 20px;
+}
+
+
 
 
 
@@ -180,4 +108,3 @@
     }
   
   }
-

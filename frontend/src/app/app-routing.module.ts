@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ReadComponent } from './components/read/read.component';
 import { CreateComponent } from './components/create/create.component'
 import { AuthGuard } from '@auth0/auth0-angular';
+import { DetailsComponent } from './components/details/details.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,11 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'details/:id',
+    component: DetailsComponent,
+    pathMatch: 'full',
   }
 
 

@@ -17,15 +17,19 @@ export class HomePage {
 
   }
 
+  
+
 
   option = { 
     slidesPerView: 3.28,
     centeredSlides: true,
     loop: true,
     spaceBetween: 10,
-    autoplay: true,
+    // autoplay: true,
     speed: 600
   }
+
+
 
 }
 

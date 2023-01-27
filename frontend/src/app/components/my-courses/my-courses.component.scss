@@ -1,0 +1,143 @@
+.containerr {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.kursusContainer {
+    background-color: #f5f5f5;
+    width: 20%;
+    margin: 10px 1%;
+    border-radius: 3px;
+    color: #2f2e41;
+}
+.kursusContainer a {
+  text-decoration: none;
+  color: #2f2e41;
+}
+
+.kursusContainer:hover {
+    box-shadow: 0 0 21px rgb(33 33 33 / 20%);
+}
+
+.kursusContainer div.img {
+    padding: 0px;
+    margin: 0px;
+    height: 100px;
+    position: relative;
+}
+
+.kursusContainer div.img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.kursusContainer .indhold {
+    padding: 10px;
+}
+
+.kursusContainer p.fag {
+    left: 48%;
+    margin-left: -48px;
+    bottom: -16px;
+    position: absolute;
+    background-color: #f5f5f5;
+    width: fit-content;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.kursusContainer h5, p {
+    text-align: center;
+}
+
+
+// button.readBtn {
+//     width: 100%;
+//     background-color: white;
+//     padding: 7px 10px;
+//     border-radius: 3px;
+//     border: 1px solid rgba(0, 0, 0, 0.137);
+// }
+
+
+// .readBtn a {
+//     padding: 7px 10px;
+//     border-radius: 3px;
+//     background-color: white;
+//     font-weight: bold;
+//     color: #2f2e41;
+//     text-decoration: none;
+//     width: 100%;
+// }
+
+// .readBtn:hover {
+//     color: white;
+//     text-decoration: none;
+//     padding: 7px 10px;
+//     border-radius: 3px;
+//     background-color: green;
+//     font-weight: bold;
+//     color: white;
+//     transition: 300ms;
+// }
+
+
+button.readBtn a {
+    background-color: white;
+    width: 100%;
+    border-radius: 3px;
+    padding: 7px 10px;
+    width: 100%;
+    color: #2f2e41;
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    font-weight: bold;
+}
+
+button.readBtn a:hover {
+    background-color: green;
+    width: 100%;
+    border-radius: 3px;
+    padding: 7px 10px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+}
+
+
+.deleteBtn {
+    position: absolute;
+    top: 7px;
+    right: 12px;
+    color: #2f2e41;
+    font-size: 13px;
+    margin: 0px;
+    font-weight: bolder;
+    background-color: white;
+    border-radius: 80px;
+    padding: 3px 7px;
+    cursor: pointer;
+}
+
+// .deleteBtn {
+//     margin-left: 10px;
+//     padding: 8px 10px;
+//     border-radius: 3px;
+//     background-color: white;
+//     font-weight: bold;
+//     border: 1px solid rgba(0, 0, 0, 0.137);
+//     color: #2f2e41;
+//     text-decoration: none;
+// }
+
+// .deleteBtn:hover {
+//     color: white;
+//     text-decoration: none;
+//     padding: 8px 10px;
+//     border-radius: 3px;
+//     background-color: red;
+//     font-weight: bold;
+//     color: white;
+//     transition: 300ms;
+// }

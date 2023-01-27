@@ -20,14 +20,18 @@ export class ReadComponent implements OnInit {
   
   countCourses = 0;
 
+  myCourses: Array<string> = [];
+  sendCoursestal: number = 0;
+
+  myCoursestal: number = 0;
+
+
   ngOnInit(): void {
 
     this.service.getAllData().subscribe((res) =>{
-
-      console.log(res, "res==>");
-
       this.readData = res.data;
       this.countCourses = this.readData.length;
+      console.log(this.readData);
     });
 
   }
@@ -35,19 +39,13 @@ export class ReadComponent implements OnInit {
   // get delete ID here
   deleteID(id: any){
 
-    console.log(id, 'deletedID==>');
-
     this.service.deleteData(id).subscribe((res)=> {
       console.log(res, 'deleteresult==>');
       this.deletedSuccesMsg = res.message;
     });
 
     this.service.getAllData().subscribe((res) =>{
-
-      console.log(res, "res==>");
-
       this.readData = res.data;
-      
     });
 
   }
@@ -55,9 +53,20 @@ export class ReadComponent implements OnInit {
 
   updateID(id:any) {}
 
-  goToCoursesDetails() {
-    
+
+  tilfoejCourse(course:any) {
+    this.myCourses.push(course);
+    this.sendCoursestal++;
+    this.myCoursestal++;
+
+    alert("The chosen course is now added to your favorites")
   }
+
+
+
+
+
+
 
 
 

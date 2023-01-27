@@ -1,3 +1,21 @@
+.nav-item {
+  transition: opacity .25s ease-in-out;
+}
+
+.nav-item a {
+  color: #2f2e41;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar-nav:hover .nav-item {
+  opacity: 0.25;
+}
+
+.navbar-nav:hover .nav-item:hover {
+  opacity: 1;
+}
+
 .container {
   justify-content: space-evenly;
   padding: 20px 20px;

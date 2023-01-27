@@ -15,24 +15,29 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+import { DetailsComponent } from '../components/details/details.component';
+import { MyCoursesComponent } from "../components/my-courses/my-courses.component";
+
 
 
 
 @NgModule({
-  imports: [
-    Ng2SearchPipeModule,
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomePageRoutingModule,
-    FormsModule, 
-    ReactiveFormsModule
-  ],
-  declarations: [
-    HomePage,
-    FooterComponent,
-    ReadComponent,
-    CreateComponent
-  ]
+    declarations: [
+        HomePage,
+        FooterComponent,
+        ReadComponent,
+        CreateComponent,
+        DetailsComponent,
+        MyCoursesComponent
+    ],
+    imports: [
+        Ng2SearchPipeModule,
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        HomePageRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
+    ]
 })
 export class HomePageModule {}

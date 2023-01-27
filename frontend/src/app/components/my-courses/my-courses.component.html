@@ -1,0 +1,33 @@
+<div class="containerParent">
+
+  <h4 class="overskrift" style="margin-left: 14px;"> My Courses ({{coursesTal}}) </h4>
+
+  <div class="containerr">
+
+    <div class="kursusContainer" *ngFor="let us of kursus">
+        <div class="img"> <img src="{{us.img}}" >
+          <p class="fag"> {{us.fag}} </p>
+          <p class="deleteBtn" (click)="deletecourse(us.id)" >X</p>
+
+        </div>
+  
+        <div class="indhold">
+          <h5> {{us.overskrift}} </h5>
+          <p> {{us.beskrivelse}} </p>
+          <button class="readBtn" style="margin-bottom: 10px;"> <a [routerLink]="['/details', us.id]">Open</a></button>
+
+        </div>
+  
+    </div>
+    
+  </div>
+
+</div>
+
+
+<!-- (click)="deletecourse(us.id)" -->
+
+
+
+
+

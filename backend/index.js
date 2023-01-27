@@ -1,24 +1,30 @@
 const express = require('express');
+// node js middleware to handle json form data
 const bodyparser = require('body-parser');
 const cors = require('cors');
-const mysql = require('mysql2');
-
 const app = express();
+
+const mysql = require('mysql2');
 
 app.use(cors())
 app.use(bodyparser.json());
 
+// denne port er den der skal lyttes til i postman. 
+// localhost:3000/user
+app.listen(3000, () => {
+    console.log('server running.....');
+});
 
 
 // database connection 
 // inside mamp you can find socket, port, user, password, host
-// database is the db you create in phpmyadmin
 const db = mysql.createConnection({
-    host:'mysql3.unoeuro.com',
-    user:'jacobgervin_dk',
-    password:'dtR3cFxrzHna42mh5DGE',
-    database:'jacobgervin_dk_db',
-    port:3306,
+    host:'127.0.0.1',
+    user:'root',
+    password:'root',
+    database:'simpledb',
+    port:3006,
+    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
 
 })
 
@@ -33,7 +39,7 @@ db.connect(err => {
 // get all data 
 app.get('/kursus', (req, res) => {
 
-    // selects from user table in database
+    // selects from kursus table in database
     let qr = `SELECT * FROM kursus`;
 
     db.query(qr, (err, result) => {
@@ -54,21 +60,22 @@ app.get('/kursus', (req, res) => {
 
 });
 
-// get all courses created by specific user
-app.get('/kursus/:email',(req, res) => {
 
-    console.log(req.params.email, 'getid==>');
+// get single data via ID
+app.get('/kursus/:id',(req, res) => {
 
-    let getEmail = req.params.email;
+    console.log(req.params.id, 'getiddd==>');
 
-    let qr = `select * from kursus where email = '${getEmail}'`;
+    let gId = req.params.id;
+
+    let qr = `select * from kursus where id = ${gId}`;
 
     db.query(qr, (err, result) => {
         if(err) {
             console.log(err);
         }
 
-        if (result.length > 0) {
+        if (result) {
             res.send({
                 message:'get single kursus data',
                 data:result
@@ -81,14 +88,16 @@ app.get('/kursus/:email',(req, res) => {
     });
 
 });
-// get single data via ID
-app.get('/kursus/:id',(req, res) => {
 
-    console.log(req.params.id, 'getid==>');
 
-    let getId = req.params.id;
+// get all courses created by specific user
+app.get('/kursus/:email',(req, res) => {
 
-    let qr = `select * from kursus where id = ${getId}`;
+    console.log(req.params.email, 'get email==>');
+
+    let getEmail = req.params.email;
+
+    let qr = `select * from kursus where email = ${getEmail}`;
 
     db.query(qr, (err, result) => {
         if(err) {
@@ -97,12 +106,12 @@ app.get('/kursus/:id',(req, res) => {
 
         if (result.length > 0) {
             res.send({
-                message:'get single kursus data',
+                message:'get all data from email',
                 data:result
             });
         } else {
             res.send({
-                message: 'kursus data not found...'
+                message: 'email data not found...'
             });
         }
     });
@@ -116,10 +125,6 @@ app.post('/kursus', (req, res)=> {
     console.log(req.body, 'create data');
 
     // sætter variabler til og være lig med vores tables værdier.
-    // let fullName = req.body.fullname;
-    // let eMail = req.body.email;
-    // let mobil = req.body.mobil;
-
     let overskrift = req.body.overskrift;
     let beskrivelse = req.body.beskrivelse;
     let fag = req.body.fag;
@@ -138,7 +143,7 @@ app.post('/kursus', (req, res)=> {
         if(err) {
             console.log(err);
         }
-        console.log(result, 'result');
+        console.log(result, 'result and created succesfully');
 
         res.send({
             message: 'Course created succesfully'
@@ -147,7 +152,6 @@ app.post('/kursus', (req, res)=> {
     });
 
 });
-
 
 
 // update single data (også kaldet PUT i sql)
@@ -204,13 +208,4 @@ app.delete('/kursus/:id', (req, res) => {
 });
 
 
-// denne port er den der skal lyttes til i postman. 
-// localhost:3000/user
-
-app.listen(3000, () => {
-    console.log('server running.....');
-});
-
-
-// npm i express body-parser cors mysql2
-// kør nodemon index.js 
+// nodemon index.js for at køre projektet

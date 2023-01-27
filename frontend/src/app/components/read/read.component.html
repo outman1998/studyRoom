@@ -2,8 +2,15 @@
 
   <div class="containerParent">
 
+    <app-my-courses *ngIf="auth.isAuthenticated$ | async;" 
+    [getkursustal]="sendCoursestal" 
+    [kursus]="myCourses" [coursesTal]="myCoursestal">
+  </app-my-courses>
+
+    <hr class="hr" *ngIf="auth.isAuthenticated$ | async;">
+
     <h4 class="overskrift"> All Courses ({{countCourses}}) </h4>
-    <ion-searchbar 
+    <ion-searchbar style="margin-left: 5px;"
     placeholder="Search for a topic" 
     [(ngModel)]="searchTerm" 
     showCancelButton="focus" animate class="searchbar">
@@ -18,9 +25,7 @@
       <!-- make a details component for the details of every course -->
     
       <div class="kursusContainer"*ngFor="let us of readData | filter:searchTerm">
-        <a 
-        class="a"
-        [routerLink]="['/detailsCom', us.id]">
+        <!-- <a [routerLink]="['/details', us.id]"> -->
           <div class="img"> <img src="{{us.img}}" >
             <p class="fag"> {{us.fag}} </p>
           </div>
@@ -28,16 +33,20 @@
           <div class="indhold">
             <h5> {{us.overskrift}} </h5>
             <p> {{us.beskrivelse}} </p>
-            <button class="deltebtn" 
+            <button class="deltebtn"
             (click)="deleteID(us.id)" 
             *ngIf="auth.isAuthenticated$ | async;">Delete
             </button>
             <button class="updateBtn" 
             *ngIf="auth.isAuthenticated$ | async;">
-              <a [routerLink]="['/create', us.id]">Update</a> 
+              <a href="javascript:void(0);" [routerLink]="['/create', us.id]">Update</a> 
+            </button>
+            <button class="updateBtn" 
+            *ngIf="auth.isAuthenticated$ | async;">
+              <a (click)="tilfoejCourse(us)">Add</a> 
             </button>
           </div>
-        </a>
+        <!-- </a> -->
 
       </div>
     

@@ -12,11 +12,10 @@ export class ApiserviceService {
 
   constructor(private _http: HttpClient) { }
 
-  
-
   // connect frontend to backend
-  apiUrl = 'https://backend-api-ofnz.onrender.com/kursus';
+  apiUrl = 'http://localhost:3000/kursus';
 
+  
   // get all data
   getAllData():Observable<any> {
 
@@ -55,8 +54,6 @@ export class ApiserviceService {
     return this._http.get(`${this.apiUrl}/${ids}`);
 
   }
-
-
 
 
 }

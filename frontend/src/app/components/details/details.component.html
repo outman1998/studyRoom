@@ -1,62 +1,20 @@
-<ion-content [fullscreen]="true" style="background-color: white;">
+<ion-content [fullscreen]="true">
+
   <div class="container">
 
-
-    <h2 *ngIf="!getParamId">Create</h2>
-
-
-    <p class="txt" *ngIf="!getParamId"> Create a course by filling in all the columns below: </p>
-    <div *ngIf="getParamId"> 
-      <p class="txt">You are now updating course no. {{getParamId}}</p> 
-      <button class="opdaterbtn"> <a routerLink="/read">Back to courses overview</a> </button>
+    <div class="kursuscontainer" *ngFor="let kursus of readData"> 
+      <h4>Overskrift:</h4>
+      <p> {{kursus.overskrift}} </p>
+      <h4>Fag:</h4>
+      <p> {{kursus.fag}} </p>
+      <h4>Beskrivelse:</h4>
+      <p> {{kursus.beskrivelse}} </p>
+      <h4>Kursus Indhold:</h4>
+      <p> {{kursus.content}} </p>
     </div>
-  
-    <div *ngIf="errorMsg" class="err">
-      <p> {{errorMsg}}</p>
-    </div>
-  
-    <div *ngIf="succesMsg" class="succesMsg">
-      <p>{{succesMsg}}      
-      </p>
-      <ion-icon class="thumpsup" name="checkmark-outline"></ion-icon>
-    </div>
-  
-  <form [formGroup]="userForm" >
-  
-    <div class="input">
-      <input type="text" placeholder="Enter overskrift" formControlName="overskrift">
-    </div>
-    
-  
-    <div class="input">
-      <input type="text" placeholder="Enter beskrivelse" formControlName="beskrivelse">
-    </div>
-  
-    <div class="input">
-      <input type="text" placeholder="Enter fag" formControlName="fag">
-    </div>
-  
-    <div class="input">
-      <input type="text" placeholder="Enter img url" formControlName="img">
-    </div>
-  
-    <div class="input content">
-      <input type="text" placeholder="Enter content" formControlName="content">
-    </div>
-  
-    <button class="btn" *ngIf="!getParamId" (click)="userSubmit()">Create course</button>
-    <button class="btn" *ngIf="getParamId" (click)="userUpdate()">Update course</button>
-  
-  </form>
-  
-  
-  </div>
-  
 
 
-    <!-- footer section -->
     <ion-footer>
-
       <div class="footerContainer">
   
         <div class="logo">
@@ -106,7 +64,7 @@
           <ul>
             <li>Home</li>
             <li>Courses</li>
-            <li>Courses</li>
+            <li>Create</li>
             <li>Why Pick Us</li>
           </ul>
         </div>
@@ -122,8 +80,11 @@
       </div>
       
     </ion-footer>
-    <!-- footer section -->
+
+  </div>
+
 </ion-content>
+
 
 
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { ApiserviceService } from 'src/app/services/apiservice.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { read } from 'fs';
 
 @Component({
   selector: 'app-profile',
@@ -14,37 +15,37 @@ export class ProfilePage implements OnInit {
   readData:any;
   myCourses:any;
 
+  mail:any;
+
   ngOnInit() {
+    
     this.service.getAllData().subscribe((res) =>{
 
       console.log(res, "res==>");
 
       this.readData = res.data;
+    });
 
-    
+    this.auth.user$.subscribe(user => {
+      user?.email
+      this.mail = user?.email;
+      console.log(this.mail);
 
     });
 
-    this.auth.user$.subscribe(user => {user?.email})
-
-
     this.auth.user$.subscribe(user => {
-      console.log(user?.email);
       this.createCourse.patchValue({
         email: user?.email
       });
       this.service.getSingleData(user?.email).subscribe(email => {
-        console.log(user?.email, 'DET FUNGERER')
-
         this.myCourses = email.data;
-
-
       });
     });
 
-
+    
 
   }
+  
   createCourse = new FormGroup({
     // 'fullname': new FormControl('', Validators.required),
     // 'email': new FormControl('', Validators.required),
@@ -59,7 +60,6 @@ export class ProfilePage implements OnInit {
 
   courseSubmit() {
 
-
       console.log(this.createCourse.value);
       this.service.createData(this.createCourse.value).subscribe((res)=> {
         console.log(res, 'res==>');
@@ -73,8 +73,6 @@ export class ProfilePage implements OnInit {
     
           this.readData = res.data;
     
-        
-    
         });
 
       });
@@ -84,10 +82,8 @@ export class ProfilePage implements OnInit {
   
           this.myCourses = email.data;
   
-  
         });
       });
-      
 
   }
 
